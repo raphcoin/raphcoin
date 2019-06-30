@@ -1,8 +1,34 @@
 [package]
-authors = ['Parity Technologies <admin@parity.io>']
+authors = ['Raphcoin']
 edition = '2018'
 name = 'raphcoin-runtime'
 version = '1.0.0'
+
+[features]
+default = ['std']
+std = [
+    'parity-codec/std',
+    'primitives/std',
+    'client/std',
+    'rstd/std',
+    'runtime-io/std',
+    'support/std',
+    'balances/std',
+    'executive/std',
+    'aura/std',
+    'indices/std',
+    'primitives/std',
+    'system/std',
+    'timestamp/std',
+    'sudo/std',
+    'version/std',
+    'serde_derive',
+    'serde',
+    'safe-mix/std',
+    'consensus-aura/std',
+    'offchain-primitives/std',
+]
+
 [dependencies.aura]
 default_features = false
 git = 'https://github.com/paritytech/substrate.git'
@@ -127,28 +153,3 @@ default_features = false
 git = 'https://github.com/paritytech/substrate.git'
 package = 'sr-version'
 rev = '779a28a1111c46481e45d1a54d945cd361a9c73b'
-
-[features]
-default = ['std']
-std = [
-    'parity-codec/std',
-    'primitives/std',
-    'client/std',
-    'rstd/std',
-    'runtime-io/std',
-    'support/std',
-    'balances/std',
-    'executive/std',
-    'aura/std',
-    'indices/std',
-    'primitives/std',
-    'system/std',
-    'timestamp/std',
-    'sudo/std',
-    'version/std',
-    'serde_derive',
-    'serde',
-    'safe-mix/std',
-    'consensus-aura/std',
-    'offchain-primitives/std',
-]
